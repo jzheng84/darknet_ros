@@ -3,9 +3,9 @@ yolo_model:
   config_file:
     name: yolo-voc.cfg
   weight_file:
-    name: yolo-voc_40000.weights
+    name: autorally_final.weights
   threshold:
-    value: 0.1
+    value: 0.25
   detection_classes:
     names:
       - ignore
