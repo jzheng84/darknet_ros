@@ -1,0 +1,7 @@
+classes= 20
+train  = /home/autorally/catkin_ws/src/darknet_ros/darknet/data/training/train_autorally_9-26.txt
+valid  = /home/autorally/catkin_ws/src/darknet_ros/darknet/data/testing/test_autorally_9-26.txt
+names = data/voc.names
+backup = backup
+results = results
+
