@@ -3,7 +3,7 @@ yolo_model:
   config_file:
     name: autorally.cfg
   weight_file:
-    name: autorally_40000.weights
+    name: autorally_4000.weights
   threshold:
     value: 0.15
   detection_classes:
