@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <launch>
+  <include file="$(find autorally_core)/launch/hardware.machine" />
   <!-- Config and weights folder. -->
   <arg name="yolo_weights_path"          default="$(find darknet_ros)/yolo_network_config/weights"/>
   <arg name="yolo_config_path"           default="$(find darknet_ros)/yolo_network_config/cfg"/>
@@ -10,9 +11,10 @@
   <rosparam command="load" ns="darknet_ros" file="$(find darknet_ros)/config/autorally.yaml"/>
 
   <!-- Start darknet and ros wrapper -->
-  <node pkg="darknet_ros" type="darknet_ros" name="darknet_ros" output="screen">
+  <node pkg="darknet_ros" type="darknet_ros" name="darknet_ros" machine="autorally-master" output="screen">
     <param name="weights_path"          value="$(arg yolo_weights_path)" />
     <param name="config_path"           value="$(arg yolo_config_path)" />
+    <param name="image_view/enable_opencv" value="false" />
   </node>
 
  <node name="republish" type="republish" pkg="image_transport" output="screen" 	args="compressed in:=/left_camera/image_color raw out:=/camera/rgb/image_raw" /> 
