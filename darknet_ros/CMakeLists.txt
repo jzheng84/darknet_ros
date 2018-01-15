@@ -47,9 +47,11 @@ ENDIF ( X11_FOUND )
 # Find rquired packeges
 find_package(Boost REQUIRED COMPONENTS thread)
 find_package(OpenCV REQUIRED)
+find_package(OpenCV 3 REQUIRED)
 find_package(catkin REQUIRED
   COMPONENTS
     cv_bridge
+    cv3_bridge
     roscpp
     rospy
     std_msgs
@@ -69,6 +71,7 @@ catkin_package(
     ${PROJECT_NAME}_lib
   CATKIN_DEPENDS
     cv_bridge
+    cv3_bridge
     roscpp
     actionlib
     rospy
@@ -149,6 +152,7 @@ if (CUDA_FOUND)
     curand
     ${Boost_LIBRARIES}
     ${catkin_LIBRARIES}
+    ${OpenCV_LIBRARIES}
   )
 
   cuda_add_executable(${PROJECT_NAME}

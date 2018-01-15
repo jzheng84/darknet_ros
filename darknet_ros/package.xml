@@ -17,6 +17,7 @@
   <depend>opencv2</depend>
   <depend>image_transport</depend>
   <depend>cv_bridge</depend>
+  <depend>cv3_bridge</depend>
   <depend>sensor_msgs</depend>
   <depend>message_generation</depend>
   <depend>darknet_ros_msgs</depend>
