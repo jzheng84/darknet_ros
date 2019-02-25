@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>darknet_ros</name>
+  <name>darknet_ros_autorally</name>
   <version>0.1.0</version>
   <description>ROS package to use YOLO in ROS.</description>
   <maintainer email="marko.bjelonic@mavt.ethz.ch">Marko Bjelonic</maintainer>

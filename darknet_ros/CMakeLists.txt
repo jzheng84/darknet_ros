@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(darknet_ros)
+project(darknet_ros_autorally)
 
 # Set c++11 cmake flags
 set(CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS}")
@@ -21,7 +21,6 @@ if (CUDA_FOUND)
     CUDA_NVCC_FLAGS
     ${CUDA_NVCC_FLAGS};
     -O3
-    -gencode arch=compute_20,code=[sm_20,sm_21]
     -gencode arch=compute_30,code=sm_30
     -gencode arch=compute_35,code=sm_35
     -gencode arch=compute_50,code=[sm_50,compute_50]

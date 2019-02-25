@@ -3,12 +3,12 @@
 <launch>
   <include file="$(find autorally_core)/launch/hardware.machine" />
   <!-- Config and weights folder. -->
-  <arg name="yolo_weights_path"          default="$(find darknet_ros)/yolo_network_config/weights"/>
-  <arg name="yolo_config_path"           default="$(find darknet_ros)/yolo_network_config/cfg"/>
+  <arg name="yolo_weights_path"          default="$(find darknet_ros_autorally)/yolo_network_config/weights"/>
+  <arg name="yolo_config_path"           default="$(find darknet_ros_autorally)/yolo_network_config/cfg"/>
 
   <!-- Load parameters -->
-  <rosparam command="load" ns="darknet_ros" file="$(find darknet_ros)/config/ros.yaml"/>
-  <rosparam command="load" ns="darknet_ros" file="$(find darknet_ros)/config/autorally.yaml"/>
+  <rosparam command="load" ns="darknet_ros" file="$(find darknet_ros_autorally)/config/ros.yaml"/>
+  <rosparam command="load" ns="darknet_ros" file="$(find darknet_ros_autorally)/config/autorally.yaml"/>
 
   <!-- Start darknet and ros wrapper -->
   <node pkg="darknet_ros" type="darknet_ros" name="darknet_ros" machine="autorally-master" output="screen">
