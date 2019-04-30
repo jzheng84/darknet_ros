@@ -212,7 +212,7 @@ void YoloObjectDetector::drawBoxes(cv::Mat &inputFrame, std::vector<RosBox_> &ro
     boundingBox.ymin = ymin;
     boundingBox.xmax = xmax;
     boundingBox.ymax = ymax;
-    boundingBoxesResults_.bounding_boxes.push_back(boundingBox);
+    boundingBoxesResults_.boundingBoxes.push_back(boundingBox);
 
     // draw bounding box of first object found
     if (objectLabel == "car") {
@@ -278,10 +278,10 @@ void YoloObjectDetector::runYolo(cv::Mat &fullFrame, int id) {
     ROS_DEBUG("[YoloObjectDetector] check for objects in image.");
     darknet_ros_msgs::CheckForObjectsResult objectsActionResult;
     objectsActionResult.id = id;
-    objectsActionResult.bounding_boxes = boundingBoxesResults_;
+    objectsActionResult.boundingBoxes = boundingBoxesResults_;
     checkForObjectsActionServer_->setSucceeded(objectsActionResult,"Send bounding boxes.");
   }
-  boundingBoxesResults_.bounding_boxes.clear();
+  boundingBoxesResults_.boundingBoxes.clear();
 
   for (int i = 0; i < numClasses_; i++) {
      rosBoxes_[i].clear();
